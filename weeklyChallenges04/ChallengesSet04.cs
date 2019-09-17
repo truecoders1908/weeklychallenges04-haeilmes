@@ -57,23 +57,62 @@ namespace weeklyChallenges04
 
         public bool IsStringANumber(string input)
         {
-            return input.All(char.IsNumber);
+            throw new NotImplementedException();
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int numOfNull = 0;
+            int numOfNotNull = 0;
+            foreach(object obj in objs)
+            {
+                if(obj != null)
+                {
+                    numOfNotNull++;
+                }
+                else
+                {
+                    numOfNull++;
+                }
+
+            }
+            if(numOfNull > numOfNotNull)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public double AverageEvens(int[] numbers)
         {
-
             throw new NotImplementedException();
         }
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            if (number == 0)
+            {
+                return 1;
+            }
+            else if(number <0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else
+            {
+
+                int i = 0;
+                int fact = number;
+                for (i = number - 1; i >= 1; i--)
+                {
+                    fact = fact * i;
+                }
+
+                return Math.Abs(fact);
+            }
         }
     }
 
