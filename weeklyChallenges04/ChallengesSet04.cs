@@ -52,12 +52,18 @@ namespace weeklyChallenges04
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            if(sideLength1 + sideLength2 > sideLength3 & sideLength1 + sideLength3 > sideLength2 & sideLength2 + sideLength3 > sideLength1)
+            {
+                return true;
+            }
+            return false;
+
         }
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            double n = 0;
+            return double.TryParse(input, out n);
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
@@ -88,7 +94,19 @@ namespace weeklyChallenges04
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if(numbers is null)
+            {
+                return 0;
+            }
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if(numbers[i] %2 ==0)
+                {
+                    List<int> evens = numbers.Select(x => x).Where(x => x % 2 == 0).ToList();
+                    return evens.Average();
+                }
+            }
+            return 0;
         }
 
         public int Factorial(int number)
